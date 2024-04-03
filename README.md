@@ -24,8 +24,16 @@ Số cell FPGA cần sử dụng.
 2)Tổng hợp mạch bằng FPGA báo cáo các resource cần sử dụng: số cell logic, số LUT, số DSP, số RAM
 ```
 [Audio equalizer based on FIR filters. | controlpaths.com](https://www.controlpaths.com/2021/06/28/audio-equalizer-based-on-fir-filters/)
-## 2. Lorem ipsum
-### 2.1. Lorem ipsum
+
+## 2. File WAV
+Trong dự án lần này thì chúng tôi sẽ thực hiện chủ yếu trên file nhạc dưới đây:
+
+
+https://github.com/Tbthanh/Midterm-Digital_Equalization/assets/90943148/ce053341-9a6d-4a55-820e-a7a66433de0b
+
+
+
+### 2.1. Cấu tạo
 <img src="Lorem ipsum">
 
 Lorem ipsum

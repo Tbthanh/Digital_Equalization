@@ -72,13 +72,14 @@ class Wav:
 
 if __name__ == "__main__":
     # Example usage:
-    file_path = './wavs/tft.wav'  # Change this to your WAV file's path
+    file_path = "./wavs/NGGYU_Chorus.wav"  # Change this to your WAV file's path
     wav = Wav(file_path=file_path)
     wav.print()
 
-    """ Example output:
-    Sample Rate: 48000
+    """ NGGYU_Chorus.wav output:
+    Sample Rate: 16000
     Channels: 1
     Sample Width (bytes): 2
-    Number of Frames: 256000
+    Number of Frames: 288000
+    Duration (s): 18.0
     """

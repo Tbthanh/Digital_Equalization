@@ -6,9 +6,9 @@ Verilog project for a 8 Band Audio Equalizer implement on FPGAs
 Thiết kế bộ cân bằng âm thanh. 
 Chi tiết về bộ Equalizer:  Audio equalizer based on FIR filters. | controlpaths.com
 
-**Đầu vào**: Âm thanh được lấy mẫu với tần số 16Khz, độ rộng bit là 16 bit.
-**Đầu vào**: 8 hệ số khuếch đại cho 8 băng tần số cần cân bằng
-**Đầu ra**: Tín hiệu âm thanh ra. 
+Đầu vào: Âm thanh được lấy mẫu với tần số 16Khz, độ rộng bit là 16 bit.
+Đầu vào: 8 hệ số khuếch đại cho 8 băng tần số cần cân bằng
+Đầu ra: Tín hiệu âm thanh ra. 
 Kết quả cần báo cáo:
 Độ trễ từ đầu vào đến đầu ra. 
 Số cell FPGA cần sử dụng.

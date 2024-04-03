@@ -1,3 +1,6 @@
+# https://github.com/Qyt0109/Verilog-8-Band-Audio-Equalizer
+# code của anh Quyết đẹp zai!
+
 import numpy as np
 from scipy import signal
 from scipy.io import wavfile

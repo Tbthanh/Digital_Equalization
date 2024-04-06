@@ -9,7 +9,15 @@
      			xac dinh hệ số k (số tap)
 			xác định số bit và vị trí fixed-point.
    		B2: xác định cấu trúc phần cứng bộ lọc FIR
-     			
+     			cấu trúc logic/dataflow
+			cấu trúc vật lsy & ánh xạ logic vào vật lý
+   				x(n) * a[0] (hình trong vở) (keyword: MAC - multiplier ...)
+       		B3: viết nhiều gỗ.
+	 	B4: Testbench simulation
+   			Đưa x(n)
+      			Lấy y(n)
+	 		rồi quay về py tính THD
+    		
 */
 module name (
 	input clk,    // Clock

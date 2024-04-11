@@ -23,18 +23,18 @@ def plot_frequency_spectrum(wav:Wav):
 
 if __name__ == "__main__":
     # Example usage
-    file_path = "./wavs/tft.wav"
+    file_path = "./wavs/NGGYU.wav"
     wav = Wav(file_path=file_path)
     plot_frequency_spectrum(wav=wav)
 
-    file_path = "./wavs/lpf_filtered_tft.wav"
+    file_path = "./wavs/lpf_filtered_NGGYU.wav"
     wav = Wav(file_path=file_path)
     plot_frequency_spectrum(wav=wav)
 
-    file_path = "./wavs/hpf_filtered_tft.wav"
+    file_path = "./wavs/hpf_filtered_NGGYU.wav"
     wav = Wav(file_path=file_path)
     plot_frequency_spectrum(wav=wav)
 
-    file_path = "./wavs/bpf_filtered_tft.wav"
+    file_path = "./wavs/bpf_filtered_NGGYU.wav"
     wav = Wav(file_path=file_path)
     plot_frequency_spectrum(wav=wav)

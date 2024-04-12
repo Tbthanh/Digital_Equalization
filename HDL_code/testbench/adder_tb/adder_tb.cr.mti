@@ -5,4 +5,11 @@ QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
 Top level modules:
 	adder
 
+} {} {}} D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/adder_tb/adder_tb.sv {1 {vlog -work work -vopt -sv -stats=none {D:\TAI_LIEU\ET-E9\Program\20232\EDABK-HDL_and_Computer_Architecture\lab-exercises\Midterm-Digital_Equalization\HDL_code\testbench\adder_tb\adder_tb.sv}
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+-- Compiling module adder_tb
+
+Top level modules:
+	adder_tb
+
 } {} {}}

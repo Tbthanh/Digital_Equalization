@@ -16,8 +16,8 @@ module multiplier (
 	always @(result) 
 	begin											
 		finalResult[N - 1] <= a[N - 1] ^ b[N - 1];	
-		finalResult[N - 2:0] <= result[29:15];
-		// finalResult[N - 2:0] <= result[14:0];							
+		// finalResult[N - 2:0] <= result[29:15];
+		finalResult[N - 2:0] <= result[14:0];							
 	end
 
 

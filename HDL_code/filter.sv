@@ -6,129 +6,70 @@ module filter (
 
 	output signed [15:0] yn
 );
+	parameter k = 14;
+	// khoi delay
+	reg [15:0] delay_x[0:k];
+	integer i;
+	always @(posedge clk or negedge rst_n) begin : proc_generate_delay
+		if(~rst_n) 
+		begin
+			yn <= 0;
+			for (i = 0; i < k; i = i + 1) 
+			begin
+				delay_x[i] <= 0;
+			end
+		end else 
+		begin
+			for (i = 1; i < k; i = i + 1) 
+			begin
+				delay_x[i] <= delay_x[i - 1] ;
+			end
+			delay_x[0] <= x;
+			
+		end
+	end
 
-	// define khoi delay
-	reg signed [15:0] delay_pipeline[15:0];
+	// wire bo nhan voi bo cong
+	wire wa00, wa01, wa02, wa03, wa04, wa05, wa06;
+	wire wa07, wa08, wa09, wa10, wa11, wa12, wa13, wa14;
 
 	// define multiplier : bo nhan
-	reg signed [15:0] product[15:0];
+	multiplier a00 (.a(x), .b(coef[0]), .c(wa00));
+	multiplier a01 (.a(delay_x[0]), .b(coef[1]), .c(wa01));
+	multiplier a02 (.a(delay_x[1]), .b(coef[2]), .c(wa02));
+	multiplier a03 (.a(delay_x[2]), .b(coef[3]), .c(wa03));
+	multiplier a04 (.a(delay_x[3]), .b(coef[4]), .c(wa04));
+	multiplier a05 (.a(delay_x[4]), .b(coef[5]), .c(wa05));
+	multiplier a06 (.a(delay_x[5]), .b(coef[6]), .c(wa06));
+	multiplier a07 (.a(delay_x[6]), .b(coef[7]), .c(wa07));
+	multiplier a08 (.a(delay_x[7]), .b(coef[8]), .c(wa08));
+	multiplier a09 (.a(delay_x[8]), .b(coef[9]), .c(wa09));
+	multiplier a10 (.a(delay_x[9]), .b(coef[10]), .c(wa10));
+	multiplier a11 (.a(delay_x[10]), .b(coef[11]), .c(wa11));
+	multiplier a12 (.a(delay_x[11]), .b(coef[12]), .c(wa12));
+	multiplier a13 (.a(delay_x[12]), .b(coef[13]), .c(wa13));
+	multiplier a14 (.a(delay_x[13]), .b(coef[14]), .c(wa14));
 
+	// wire cac bo cong voi nhau
+	wire 	wad00, wad01, wad02, wad03, wad04, wad05, 
+			wad06, wad07,wad08, wad09, wad10, wad11, wad12, wad13;
 
-	// define tổng buffer 
-	reg signed [15:0] sum_buff;
+	// bo cong cac kieu con da dieu
+	adder add00 (.a(wa00), .b(wa01), .c(wad00));
+	adder add01 (.a(wad00), .b(wa02), .c(wad01));
+	adder add02 (.a(wad01), .b(wa03), .c(wad02));
+	adder add03 (.a(wad02), .b(wa04), .c(wad03));
+	adder add04 (.a(wad03), .b(wa05), .c(wad04));
+	adder add05 (.a(wad04), .b(wa06), .c(wad05));
+	adder add06 (.a(wad05), .b(wa07), .c(wad06));
+	adder add07 (.a(wad06), .b(wa08), .c(wad07));
+	adder add08 (.a(wad07), .b(wa09), .c(wad08));
+	adder add09 (.a(wad08), .b(wa10), .c(wad09));
+	adder add10 (.a(wad09), .b(wa11), .c(wad10));
+	adder add11 (.a(wad10), .b(wa12), .c(wad11));
+	adder add12 (.a(wad11), .b(wa13), .c(wad12));
+	adder add13 (.a(wad12), .b(wa14), .c(wad13));
 
-	//define input cua buffer
-	reg signed [15:0] data_in_buff;
+	assign yn = wad13;
 
-
-
-	// FF nhận data buffer 
-	always @(posedge clk or negedge rst_n) begin
-		if (!rst_n) begin
-			data_in_buff <= 0;
-		end
-		else begin
-			data_in_buff <= filter_in;
-		end
-	end
-
-	// Đường pipeline của các khối delay
-	always @(posedge clk or negedge rst_n) begin
-		if (!rst) begin
-			delay_pipeline[0] <= 0;
-			delay_pipeline[1] <= 0;
-			delay_pipeline[2] <= 0 ;
-			delay_pipeline[3] <= 0 ;
-			delay_pipeline[4] <= 0 ;
-			delay_pipeline[5] <= 0 ;
-			delay_pipeline[6] <= 0 ;
-			delay_pipeline[7] <= 0 ;
-			delay_pipeline[8] <= 0 ;
-			delay_pipeline[9] <= 0 ;
-			delay_pipeline[10] <= 0 ;
-			delay_pipeline[11] <= 0 ;
-			delay_pipeline[12] <= 0 ;
-			delay_pipeline[13] <= 0 ;
-			delay_pipeline[14] <= 0 ;
-			delay_pipeline[15] <= 0 ;
-		end
-		else begin
-			delay_pipeline[0] <= data_in_buff;
-			delay_pipeline[1] <= delay_pipeline[0];
-			delay_pipeline[2] <= delay_pipeline[1];
-			delay_pipeline[3] <= delay_pipeline[2];
-			delay_pipeline[4] <= delay_pipeline[3];
-			delay_pipeline[5] <= delay_pipeline[4];
-			delay_pipeline[6] <= delay_pipeline[5];
-			delay_pipeline[7] <= delay_pipeline[6];
-			delay_pipeline[8] <= delay_pipeline[7];
-			delay_pipeline[9] <= delay_pipeline[8];
-			delay_pipeline[10] <= delay_pipeline[9];
-			delay_pipeline[11] <= delay_pipeline[10];
-			delay_pipeline[12] <= delay_pipeline[11];
-			delay_pipeline[13] <= delay_pipeline[12];
-			delay_pipeline[14] <= delay_pipeline[13];
-			delay_pipeline[15] <= delay_pipeline[14];
-		end
-	end
-
-	// Nối  bộ nhân với coefficient
-	always @(posedge clk or negedge rst_n) begin
-		if (!rst_n) begin
-			product[0] <= 0;
-			product[1] <= 0;
-			product[2] <= 0;
-			product[3] <= 0;
-			product[4] <= 0;
-			product[5] <= 0;
-			product[6] <= 0;
-			product[7] <= 0;
-			product[8] <= 0;
-			product[9] <= 0;
-			product[10] <= 0;
-			product[11] <= 0;
-			product[12] <= 0;
-			product[13] <= 0;
-			product[14] <= 0;
-			product[15] <= 0;
-		end
-		else begin
-		product[0] <= coef[0] * delay_pipeline[0];
-		product[1] <= coef[1] * delay_pipeline[1];
-		product[2] <= coef[2] * delay_pipeline[2];
-		product[3] <= coef[3] * delay_pipeline[3];
-		product[4] <= coef[4] * delay_pipeline[4];
-		product[5] <= coef[5] * delay_pipeline[5];
-		product[6] <= coef[6] * delay_pipeline[6];
-		product[7] <= coef[7] * delay_pipeline[7];
-		product[8] <= coef[8] * delay_pipeline[8];
-		product[9] <= coef[9] * delay_pipeline[9];
-		product[10] <= coef[10] * delay_pipeline[10];
-		product[11] <= coef[11] * delay_pipeline[11];
-		product[12] <= coef[12] * delay_pipeline[12];
-		product[13] <= coef[13] * delay_pipeline[13];
-		product[14] <= coef[14] * delay_pipeline[14];
-		product[15] <= coef[15] * delay_pipeline[15];			
-		end
-	end
-
-	// Phép cộng cuối 
-	always @(posedge clk or negedge rst_n) begin
-		if (!rst_n) begin
-			sum_buff <= 0;
-		end
-		else begin
-			sum_buff <= product[0] + product[1] + product[2] + product[3] + product[4] + product[5] + product[6] + product[7] + product[8] +
-	product[9] + product[10] + product[11] + product[12] + product[13] + product[14] + product[15];
-	end
-	end
-
-	always@ (sum_buff) begin
-		if (!rst_n) begin
-			filter_out = 0;
-			end
-		else begin
-			filter_out = sum_buff;
-		end
-	end
 endmodule : filter

@@ -1,6 +1,6 @@
 module multiplier (
-	input 	logic [15:0] a, b,
-	output 	logic [15:0] c 	
+	input signed [15:0] a, b,
+	output signed [15:0] c 	
 );
 	parameter N = 16;
 

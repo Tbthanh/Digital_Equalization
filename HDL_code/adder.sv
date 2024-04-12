@@ -2,12 +2,12 @@ module adder  #(
 	parameter N = 16	// total-bits
 )
 (
-    input 	logic [N - 1 : 0] a,
-    input 	logic [N - 1 : 0] b,
-    output	logic [N - 1 : 0] c
+    input 	signed [N - 1 : 0] a,
+    input 	signed [N - 1 : 0] b,
+    output	signed [N - 1 : 0] c
 );
 
-	logic [N - 1 : 0] result;
+	reg signed [N - 1 : 0] result;
 	assign c = result;
 
 	always @(a,b) 

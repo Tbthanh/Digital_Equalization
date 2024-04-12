@@ -1,9 +1,9 @@
 module adder_tb ();
 	reg t_clk, t_rst;
-	reg stim_a;
-	reg stim_b;
-	wire out_c;
-	reg correct_c;
+	reg [15:0]stim_a;
+	reg [15:0]stim_b;
+	wire [15:0]out_c;
+	reg [15:0]correct_c;
 
 	//initial keyword: execute the block only once
 	initial //initialize clock
@@ -17,7 +17,7 @@ module adder_tb ();
 	always @(out_c or correct_c)
 	begin
 		if (out_c!=correct_c) 
-			printf("t = %t FAILED, a = %b, b = %b, c = %b, correct = %b\n", $time, stim_a, stim_b, out_c, correct_c);
+			$display("t = %t FAILED, a = %b, b = %b, c = %b, correct = %b\n", $time, stim_a, stim_b, out_c, correct_c);
 	end
 
 	initial //direct input generation

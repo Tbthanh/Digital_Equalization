@@ -10,26 +10,6 @@ module filter (
 	// define khoi delay
 	reg signed [15:0] delay_pipeline[15:0];
 
-	// // define he so : coefficient
-	// wire signed [15:0] coef[15:0];
-
-	// assign coef[0] = ;
-	// assign coef[1] = ;
-	// assign coef[2] = ;
-	// assign coef[3] = ;
-	// assign coef[4] = ;
-	// assign coef[5] = ;
-	// assign coef[6] = ;
-	// assign coef[7] = ;
-	// assign coef[8] = ;
-	// assign coef[9] = ;
-	// assign coef[10] = ;
-	// assign coef[11] = ;
-	// assign coef[12] = ;
-	// assign coef[13] = ;
-	// assign coef[14] = ;
-	// assign coef[15] = ;
-
 	// define multiplier : bo nhan
 	reg signed [15:0] product[15:0];
 

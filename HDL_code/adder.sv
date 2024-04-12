@@ -37,28 +37,28 @@ module adder  #(
 			end
 			else 
 			begin												
-			result[N-2:0] = b[N-2:0] - a[N-2:0];			
-			if (result[N-2:0] == 0)
-			result[N-1] = 0;										
-			else
-			result[N-1] = 1;									
+				result[N - 2 : 0] = b[N - 2 : 0] - a[N - 2 : 0];			
+				if (result[N - 2 : 0] == 0)
+					result[N - 1] = 0;										
+				else
+					result[N - 1] = 1;									
 			end
 		end
 		else 
 		begin												
-		if( a[N-2:0] > b[N-2:0] ) 
-		begin					
-		result[N-2:0] = a[N-2:0] - b[N-2:0];			
-		if (result[N-2:0] == 0)
-		result[N-1] = 0;										
-		else
-		result[N-1] = 1;										
-		end
-		else 
-		begin												
-		result[N-2:0] = b[N-2:0] - a[N-2:0];			
-		result[N-1] = 0;										
-		end
+			if( a[N - 2 : 0] > b[N - 2 : 0] ) 
+			begin					
+				result[N - 2 : 0] = a[N - 2 : 0] - b[N - 2 : 0];			
+				if (result[N - 2 : 0] == 0)
+					result[N - 1] = 0;										
+				else
+					result[N - 1] = 1;										
+			end
+			else 
+			begin												
+				result[N - 2 : 0] = b[N - 2 : 0] - a[N - 2 : 0];			
+				result[N-1] = 0;										
+			end
 		end
 	end
 

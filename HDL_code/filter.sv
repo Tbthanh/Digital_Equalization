@@ -148,6 +148,4 @@ module filter (
 			filter_out = sum_buff;
 		end
 	end
-endmodule: filter.sv
-
 endmodule : filter

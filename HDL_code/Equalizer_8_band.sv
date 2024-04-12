@@ -21,8 +21,8 @@ module Equalizer_8_band (
 ;	wire ga13, ga47;
 
 	// initialize filter module:
-	filter fil00 (.clk(clk), .rst_n(rst_n), .xn(x), .yn(fg0);
-	filter fil01 (.clk(clk), .rst_n(rst_n), .xn(x), .yn(fg1);
+	filter fil00 (.clk(clk), .rst_n(rst_n), .xn(x), .yn(fg0));
+	filter fil01 (.clk(clk), .rst_n(rst_n), .xn(x), .yn(fg1));
 	// filter ...
 
 	// initialize gain module:

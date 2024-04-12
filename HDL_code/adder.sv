@@ -1,25 +1,14 @@
 module adder  #(
-	parameter Q = 15,	// fractional-bits
-	parameter N = 32	// total-bits
+	parameter N = 16	// total-bits
 )
 (
-    input 	logic [N - 1 : 0] a,
-    input 	logic [N - 1 : 0] b,
-    output	logic [N - 1 : 0] c
+    input 	signed [N - 1 : 0] a,
+    input 	signed [N - 1 : 0] b,
+    output	signed [N - 1 : 0] c
 );
 
-	logic [N - 1 : 0] result;
+	reg signed [N - 1 : 0] result;
 	assign c = result;
-
-// In this case:
-// (Q,N) = (15,32) => 1 sign-bit + 16 integer-bits + 15 fractional-bits = 32 total-bits
-//
-//                    |S|IIIIIIIIIIIIIIII|FFFFFFFFFFFFFFF|
-//
-//
-//Since we supply every negative number in it's 2's complement form by default, all we 
-//need to do is add these two numbers together (note that to subtract a binary number 
-//is the same as to add its two's complement)
 
 	always @(a,b) 
 	begin

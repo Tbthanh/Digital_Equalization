@@ -40,8 +40,8 @@ module filter (
 
 
 	// FF nhận data buffer 
-	always @(posedge clk or negedge rst) begin
-		if (!rst) begin
+	always @(posedge clk or negedge rst_n) begin
+		if (!rst_n) begin
 			data_in_buff <= 0;
 		end
 		else begin
@@ -50,7 +50,7 @@ module filter (
 	end
 
 	// Đường pipeline của các khối delay
-	always @(posedge clk or negedge rst) begin
+	always @(posedge clk or negedge rst_n) begin
 		if (!rst) begin
 			delay_pipeline[0] <= 0;
 			delay_pipeline[1] <= 0;
@@ -90,8 +90,8 @@ module filter (
 	end
 
 	// Nối  bộ nhân với coefficient
-	always @(posedge clk or negedge rst) begin
-		if (!rst) begin
+	always @(posedge clk or negedge rst_n) begin
+		if (!rst_n) begin
 			product[0] <= 0;
 			product[1] <= 0;
 			product[2] <= 0;
@@ -130,8 +130,8 @@ module filter (
 	end
 
 	// Phép cộng cuối 
-	always @(posedge clk or negedge rst) begin
-		if (!rst) begin
+	always @(posedge clk or negedge rst_n) begin
+		if (!rst_n) begin
 			sum_buff <= 0;
 		end
 		else begin
@@ -141,13 +141,13 @@ module filter (
 	end
 
 	always@ (sum_buff) begin
-		if (!rst) begin
+		if (!rst_n) begin
 			filter_out = 0;
 			end
 		else begin
 			filter_out = sum_buff;
 		end
 	end
-	
+endmodule: filter.sv
 
 endmodule : filter

@@ -13,7 +13,6 @@ module filter (
 	always @(posedge clk or negedge rst_n) begin : proc_generate_delay
 		if(~rst_n) 
 		begin
-			yn <= 0;
 			for (i = 0; i < k; i = i + 1) 
 			begin
 				delay_x[i] <= 0;
@@ -30,8 +29,8 @@ module filter (
 	end
 
 	// wire bo nhan voi bo cong
-	wire wa00, wa01, wa02, wa03, wa04, wa05, wa06;
-	wire wa07, wa08, wa09, wa10, wa11, wa12, wa13, wa14;
+	wire [15:0] wa00, wa01, wa02, wa03, wa04, wa05, wa06;
+	wire [15:0]wa07, wa08, wa09, wa10, wa11, wa12, wa13, wa14;
 
 	// define multiplier : bo nhan
 	multiplier a00 (.a(x), .b(coef[0]), .c(wa00));
@@ -51,8 +50,9 @@ module filter (
 	multiplier a14 (.a(delay_x[13]), .b(coef[14]), .c(wa14));
 
 	// wire cac bo cong voi nhau
-	wire 	wad00, wad01, wad02, wad03, wad04, wad05, 
-			wad06, wad07,wad08, wad09, wad10, wad11, wad12, wad13;
+	wire [15:0]	wad00, wad01, wad02, wad03, wad04, wad05;
+	wire [15:0]	wad06, wad07,wad08, wad09, wad10, wad11, wad12;
+	reg signed [15:0] wad13;
 
 	// bo cong cac kieu con da dieu
 	adder add00 (.a(wa00), .b(wa01), .c(wad00));

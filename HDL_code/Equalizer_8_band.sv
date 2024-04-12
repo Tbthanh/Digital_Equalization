@@ -10,6 +10,8 @@ module Equalizer_8_band (
 
 	output [15:0] y
 );
+	reg [15:0]result;
+
 	// connection between filter and gain
 	wire fg0, fg1, fg2, fg3, fg4, fg5, fg6, fg7;
 
@@ -25,10 +27,19 @@ module Equalizer_8_band (
 
 	// initialize gain module:
 	gain gain00 (.clk(clk), .rst_n(rst_n), .xn(x), .gk(g0), .yn(ga0));
+	// gain ...
 
 	// initialize addition module:
-	adder adder00 (); // add fil-gain0 and fil-gain1
-	// ...
-	adder adder_1_to_7(.clk(clk), .rst_n(rst_n), .x1(ga13), .x2(.ga47), .yn(y));
+	adder adder_0_n_1(.a(ga0), .b(ga1), .c(ga01));
+	adder adder_2_n_3(.a(ga2), .b(ga3), .c(ga23));
+	adder adder_4_n_5(.a(ga4), .b(ga5), .c(ga45));
+	adder adder_6_n_7(.a(ga6), .b(ga7), .c(ga67));
+
+	adder adder_0_to_3(.a(ga01), .b(ga23), .c(ga13));
+	adder adder_4_to_7(.a(ga45), .b(ga67), .c(ga47));
+	
+	adder adder_1_to_7(.a(ga13), .b(ga47), .c(result));
+
+	assign y = result;
 
 endmodule : Equalizer_8_band

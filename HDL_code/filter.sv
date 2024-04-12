@@ -6,27 +6,25 @@ module filter (
 
 	output signed [15:0] yn
 );
-	parameter k = 14;
 	// khoi delay
-	reg [15:0] delay_x[0:k];
+	reg [15:0] delay_x[13:0];
 	integer i;
 	always @(posedge clk or negedge rst_n) begin : proc_generate_delay
 		if(~rst_n) 
 		begin
-			for (i = 0; i < k; i = i + 1) 
+			for (i = 0; i < 14; i = i + 1) 
 			begin
 				delay_x[i] <= 0;
 			end
 		end else 
 		begin
-			for (i = 1; i < k; i = i + 1) 
+			delay_x[0] <= xn;
+			for (i = 1; i < 14; i = i + 1) 
 			begin
 				delay_x[i] <= delay_x[i - 1] ;
 			end
-			delay_x[0] <= xn;
-			
 		end
-	end
+	end 
 
 	// wire bo nhan voi bo cong
 	wire [15:0] wa00, wa01, wa02, wa03, wa04, wa05, wa06;

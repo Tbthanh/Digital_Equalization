@@ -9,17 +9,17 @@ z2
 cModel Technology
 dD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/multiplier_tb
 T_opt
-!s110 1712948819
-VYQhDm0SEH;MU0^he13I=W3
+!s110 1712949711
+VWD_`hNWSG`ChjDAbkMKcX3
 04 9 4 work filter_tb fast 0
-=1-1831bf97d605-66198653-93-38f4
+=1-1831bf97d605-661989cf-203-6b04
 o-quiet -auto_acc_if_foreign -work work +acc
 Z0 tCvgOpt 0
 n@_opt
 OL;O;10.7c;67
 vadder
 Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z2 !s110 1712948811
+Z2 !s110 1712949706
 !i10b 1
 !s100 ^WPfREj9G1TGK[kScHMYk1
 IDi2nLmO?^:Sbc5K^7gI@L1
@@ -35,7 +35,7 @@ Z5 OL;L;10.7c;67
 r1
 !s85 0
 31
-Z6 !s108 1712948810.000000
+Z6 !s108 1712949706.000000
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv|
 !i113 0
@@ -43,15 +43,15 @@ Z7 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R0
 vfilter
 R1
-Z8 !s110 1712948810
+R2
 !i10b 1
-!s100 =FfW]HgbJJSdBUj6Ej5f50
-Imj:a1oX0ddIVGT1Oe=R832
+!s100 >>P75:Z0zPOl^Ef5J>Q]M2
+I6o3A8]oj4KBcJPSM9AeJ[1
 R3
 !s105 filter_sv_unit
 S1
 R4
-w1712948706
+w1712949689
 8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv
 FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv
 L0 1
@@ -67,7 +67,7 @@ R7
 R0
 vfilter_tb
 R1
-R8
+R2
 !i10b 1
 !s100 Z1ARM9TzJ2@<;<DnXKb@J1
 IO2iC[g:BC_zZANlj;7VY01
@@ -107,7 +107,7 @@ R5
 r1
 !s85 0
 31
-!s108 1712948811.000000
+R6
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv|
 !i113 0

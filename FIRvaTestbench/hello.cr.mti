@@ -1,0 +1,8 @@
+C:/Users/mayaa/Desktop/VERILOG/filter.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/mayaa/Desktop/VERILOG/filter.sv
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+-- Compiling module filter
+
+Top level modules:
+	filter
+
+} {} {}}

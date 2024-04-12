@@ -23,7 +23,7 @@ module filter (
 			begin
 				delay_x[i] <= delay_x[i - 1] ;
 			end
-			delay_x[0] <= x;
+			delay_x[0] <= xn;
 			
 		end
 	end

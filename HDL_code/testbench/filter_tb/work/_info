@@ -8,75 +8,108 @@ z2
 !i10f 100
 cModel Technology
 dD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/multiplier_tb
+T_opt
+!s110 1712948819
+VYQhDm0SEH;MU0^he13I=W3
+04 9 4 work filter_tb fast 0
+=1-1831bf97d605-66198653-93-38f4
+o-quiet -auto_acc_if_foreign -work work +acc
+Z0 tCvgOpt 0
+n@_opt
+OL;O;10.7c;67
 vadder
-Z0 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z1 !s110 1712948573
+Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+Z2 !s110 1712948811
 !i10b 1
 !s100 ^WPfREj9G1TGK[kScHMYk1
 IDi2nLmO?^:Sbc5K^7gI@L1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 adder_sv_unit
 S1
-Z3 dD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb
+Z4 dD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb
 w1712944166
 8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv
 FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv
 L0 1
-Z4 OL;L;10.7c;67
+Z5 OL;L;10.7c;67
 r1
 !s85 0
 31
-Z5 !s108 1712948573.000000
+Z6 !s108 1712948810.000000
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv|
 !i113 0
-Z6 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z7 tCvgOpt 0
-vfilter_tb
+Z7 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R0
+vfilter
 R1
+Z8 !s110 1712948810
 !i10b 1
-!s100 ceYVDD>c]PB_bflW:hH;c0
-I^NT89@573b:M`_kan883g0
-R2
-!s105 filter_tb_sv_unit
-S1
+!s100 =FfW]HgbJJSdBUj6Ej5f50
+Imj:a1oX0ddIVGT1Oe=R832
 R3
-w1712947584
-8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv
-FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv
-L0 1
+!s105 filter_sv_unit
+S1
 R4
+w1712948706
+8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv
+FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv
+L0 1
+R5
 r1
 !s85 0
 31
+R6
+!s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv|
+!i113 0
+R7
+R0
+vfilter_tb
+R1
+R8
+!i10b 1
+!s100 Z1ARM9TzJ2@<;<DnXKb@J1
+IO2iC[g:BC_zZANlj;7VY01
+R3
+!s105 filter_tb_sv_unit
+S1
+R4
+w1712948801
+8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv
+FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv
+L0 1
 R5
+r1
+!s85 0
+31
+R6
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv|
 !i113 0
-R6
 R7
-vmultiplier
 R0
-!s110 1712948574
+vmultiplier
+R1
+R2
 !i10b 1
 !s100 @2:bD[Tzf;UOPXBgTlLF21
 IMbl6=0Rinei]H<dMEj^1V3
-R2
+R3
 !s105 multiplier_sv_unit
 S1
-R3
+R4
 w1712944133
 8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv
 FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv
 L0 1
-R4
+R5
 r1
 !s85 0
 31
-!s108 1712948574.000000
+!s108 1712948811.000000
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv|
 !i113 0
-R6
 R7
+R0

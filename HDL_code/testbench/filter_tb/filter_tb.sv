@@ -34,7 +34,7 @@ module filter_tb ();
 	always @(out_yn or correct_yn)
 	begin
 		if (out_yn!=correct_yn) 
-			$display("t = %t FAILED, a = %b, b = %b, c = %b, correct = %b\n", $time, stim_a, stim_b, out_c, correct_c);
+			$display("t = %t FAILED, xn = %b, out_yn = %b, correct = %b\n", $time, stim_xn, out_yn, correct_yn);
 	end
 
 	initial //direct input generation

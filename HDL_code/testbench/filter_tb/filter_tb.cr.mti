@@ -1,16 +1,16 @@
-D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv {1 {vlog -work work -vopt -sv -stats=none D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv
+D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv {1 {vlog -work work -vopt -sv -stats=none D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/filter.sv
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+-- Compiling module filter
+
+Top level modules:
+	filter
+
+} {} {}} D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv {1 {vlog -work work -vopt -sv -stats=none D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/multiplier.sv
 QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
 -- Compiling module multiplier
 
 Top level modules:
 	multiplier
-
-} {} {}} D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv {1 {vlog -work work -vopt -sv -stats=none D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv
-QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
--- Compiling module filter_tb
-
-Top level modules:
-	filter_tb
 
 } {} {}} D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv {1 {vlog -work work -vopt -sv -stats=none D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv
 QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
@@ -18,5 +18,12 @@ QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
 
 Top level modules:
 	adder
+
+} {} {}} D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv {1 {vlog -work work -vopt -sv -stats=none D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb/filter_tb.sv
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+-- Compiling module filter_tb
+
+Top level modules:
+	filter_tb
 
 } {} {}}

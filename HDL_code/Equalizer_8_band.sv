@@ -3,12 +3,12 @@ module Equalizer_8_band (
 	input rst_n,  // Asynchronous reset active low
 
 	// txt input
-	input [15:0] x,
+	input signed [15:0] x,
 
 	// gain input
-	input [15:0] g [7:0],
+	input signed [7:0] g [7:0],
 
-	output [15:0] y
+	output signed [15:0] y
 );
 	reg [15:0]result;
 
@@ -178,25 +178,14 @@ module Equalizer_8_band (
 	
 
 	// initialize gain module:
-		// gain value
-	reg signed [7:0] g0, g1, g2, g3, g4, g5, g6, g7;
-	assign g0 = 1;
-	assign g1 = 1; 
-	assign g2 = 1; 
-	assign g3 = 1; 
-	assign g4 = 1; 
-	assign g5 = 1; 
-	assign g6 = 1;
-	assign g7 = 1;  
-		// gain module
-	gain gain00 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g0), .yn(ga0));
-	gain gain01 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g1), .yn(ga1));
-	gain gain02 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g2), .yn(ga2));
-	gain gain03 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g3), .yn(ga3));
-	gain gain04 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g4), .yn(ga4));
-	gain gain05 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g5), .yn(ga5));
-	gain gain06 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g6), .yn(ga6));
-	gain gain07 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g7), .yn(ga7));
+	gain gain00 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[0]), .yn(ga0));
+	gain gain01 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[1]), .yn(ga1));
+	gain gain02 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[2]), .yn(ga2));
+	gain gain03 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[3]), .yn(ga3));
+	gain gain04 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[4]), .yn(ga4));
+	gain gain05 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[5]), .yn(ga5));
+	gain gain06 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[6]), .yn(ga6));
+	gain gain07 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[7]), .yn(ga7));
 
 	
 

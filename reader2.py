@@ -54,6 +54,12 @@ def write_data(data, filename):
     for i in data:
         f.write(str(i)+"\n") 
 
+def quantize(data):
+    a = data*(2**15)
+    for i in range (0, len(a), 1):
+        a[i] = math.trunc(a[i]) 
+    return a
+
 #band1 = lowpass(110, 16000)             #band 1, frequency mode 78Hz
 #band2 = bandpass(110, 221, 16000)       #band 2, frequency mode 156Hz
 #band3 = bandpass(221, 442, 16000)       #band 3, frequency mode 312Hz
@@ -75,14 +81,23 @@ def equalizer(input_file, gain1 = 0, gain2 = 0, gain3 = 0, gain4 = 0, gain5 = 0,
     band7 = bandpass(3536, 7071, 16000)     #band 7, frequency mode 5kHz
     band8 = highpass(7071, 16000)           #band 8, frequency mode 10kHz
 
-    o1 = fil(d[1], band1)
-    o2 = fil(d[1], band2)
-    o3 = fil(d[1], band3)
-    o4 = fil(d[1], band4)
-    o5 = fil(d[1], band5)
-    o6 = fil(d[1], band6)
-    o7 = fil(d[1], band7)
-    o8 = fil(d[1], band8)
+    band1 = quantize(band1)
+    band2 = quantize(band2)
+    band3 = quantize(band3)
+    band4 = quantize(band4)
+    band5 = quantize(band5)
+    band6 = quantize(band6)
+    band7 = quantize(band7)
+    band8 = quantize(band8)
+
+    o1 = fil(d[1], band1/(2**15))
+    o2 = fil(d[1], band2/(2**15))
+    o3 = fil(d[1], band3/(2**15))
+    o4 = fil(d[1], band4/(2**15))
+    o5 = fil(d[1], band5/(2**15))
+    o6 = fil(d[1], band6/(2**15))
+    o7 = fil(d[1], band7/(2**15))
+    o8 = fil(d[1], band8/(2**15))
 
     #plot_t(o1, 16000)   
     #plot_t(o2, 16000)   

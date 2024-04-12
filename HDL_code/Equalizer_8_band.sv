@@ -13,12 +13,12 @@ module Equalizer_8_band (
 	reg [15:0]result;
 
 	// connection between filter and gain
-	wire fg0, fg1, fg2, fg3, fg4, fg5, fg6, fg7;
+	wire [15:0] fg0, fg1, fg2, fg3, fg4, fg5, fg6, fg7;
 
 	// connection between gain and adder module
-	wire ga0, ga1, ga2, ga3, ga4, ga5, ga6, ga7;
-	wire ga01, ga23, ga45, ga67
-;	wire ga13, ga47;
+	wire [15:0] ga0, ga1, ga2, ga3, ga4, ga5, ga6, ga7;
+	wire [15:0] ga01, ga23, ga45, ga67
+;	wire [15:0] ga13, ga47;
 
 	// initialize filter module:
 	filter fil00 (.clk(clk), .rst_n(rst_n), .xn(x), .yn(fg0));

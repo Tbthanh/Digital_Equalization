@@ -7,19 +7,19 @@ module filter (
 	output signed [15:0] yn
 );
 	// khoi delay
-	reg [15:0] delay_x[13:0];
+	reg [15:0] delay_x[14:0];
 	integer i;
 	always @(posedge clk or negedge rst_n) begin : proc_generate_delay
 		if(~rst_n) 
 		begin
-			for (i = 0; i < 14; i = i + 1) 
+			for (i = 0; i < 15; i = i + 1) 
 			begin
 				delay_x[i] <= 0;
 			end
 		end else 
 		begin
 			delay_x[0] <= xn;
-			for (i = 1; i < 14; i = i + 1) 
+			for (i = 1; i < 15; i = i + 1) 
 			begin
 				delay_x[i] <= delay_x[i - 1] ;
 			end
@@ -31,21 +31,21 @@ module filter (
 	wire [15:0]wa07, wa08, wa09, wa10, wa11, wa12, wa13, wa14;
 
 	// define multiplier : bo nhan
-	multiplier a00 (.a(x), .b(coef[0]), .c(wa00));
-	multiplier a01 (.a(delay_x[0]), .b(coef[1]), .c(wa01));
-	multiplier a02 (.a(delay_x[1]), .b(coef[2]), .c(wa02));
-	multiplier a03 (.a(delay_x[2]), .b(coef[3]), .c(wa03));
-	multiplier a04 (.a(delay_x[3]), .b(coef[4]), .c(wa04));
-	multiplier a05 (.a(delay_x[4]), .b(coef[5]), .c(wa05));
-	multiplier a06 (.a(delay_x[5]), .b(coef[6]), .c(wa06));
-	multiplier a07 (.a(delay_x[6]), .b(coef[7]), .c(wa07));
-	multiplier a08 (.a(delay_x[7]), .b(coef[8]), .c(wa08));
-	multiplier a09 (.a(delay_x[8]), .b(coef[9]), .c(wa09));
-	multiplier a10 (.a(delay_x[9]), .b(coef[10]), .c(wa10));
-	multiplier a11 (.a(delay_x[10]), .b(coef[11]), .c(wa11));
-	multiplier a12 (.a(delay_x[11]), .b(coef[12]), .c(wa12));
-	multiplier a13 (.a(delay_x[12]), .b(coef[13]), .c(wa13));
-	multiplier a14 (.a(delay_x[13]), .b(coef[14]), .c(wa14));
+	multiplier a00 (.a(delay_x[0]), .b(coef[0]), .c(wa00));
+	multiplier a01 (.a(delay_x[1]), .b(coef[1]), .c(wa01));
+	multiplier a02 (.a(delay_x[2]), .b(coef[2]), .c(wa02));
+	multiplier a03 (.a(delay_x[3]), .b(coef[3]), .c(wa03));
+	multiplier a04 (.a(delay_x[4]), .b(coef[4]), .c(wa04));
+	multiplier a05 (.a(delay_x[5]), .b(coef[5]), .c(wa05));
+	multiplier a06 (.a(delay_x[6]), .b(coef[6]), .c(wa06));
+	multiplier a07 (.a(delay_x[7]), .b(coef[7]), .c(wa07));
+	multiplier a08 (.a(delay_x[8]), .b(coef[8]), .c(wa08));
+	multiplier a09 (.a(delay_x[9]), .b(coef[9]), .c(wa09));
+	multiplier a10 (.a(delay_x[10]), .b(coef[10]), .c(wa10));
+	multiplier a11 (.a(delay_x[11]), .b(coef[11]), .c(wa11));
+	multiplier a12 (.a(delay_x[12]), .b(coef[12]), .c(wa12));
+	multiplier a13 (.a(delay_x[13]), .b(coef[13]), .c(wa13));
+	multiplier a14 (.a(delay_x[14]), .b(coef[14]), .c(wa14));
 
 	// wire cac bo cong voi nhau
 	wire [15:0]	wad00, wad01, wad02, wad03, wad04, wad05;

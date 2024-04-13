@@ -4,7 +4,7 @@ module Equalizer_8_band_tb ();
 	reg signed [15:0] stim_x;
 	reg signed [7:0] gud [7:0];
 	wire signed [15:0] out_y;
-	reg signed [15:0]correct_y;
+	// reg signed [15:0]correct_y;
 
 	parameter inbit = 288000;
 
@@ -14,7 +14,7 @@ module Equalizer_8_band_tb ();
 	initial //initialize clock
 	begin
 		t_clk = 0;
-		forever t_clk = #10 ~t_clk; //clock switches value every 20ns
+		forever t_clk = #10 ~t_clk; //clock switches value every 10ns
 	end
 
 	// gain value
@@ -29,75 +29,77 @@ module Equalizer_8_band_tb ();
 
 	Equalizer_8_band dut(.clk(t_clk), .rst_n(t_rst), .x(stim_x), .g(gud), .y(out_y));
 
-	integer i, f;
+	integer i, fread, fwrite, count;
 	initial begin // khoi tao reset
-	t_rst = 0;
-	stim_x = 0;
-	i = 0;
-	end
-
-
-	initial begin // doc file txt 
-	$readmemb("input_wave_binary.txt", data_in_array);
-	end
-
-
-	initial begin 
-		#10 t_rst = 1; 
-	end
-
-	initial begin
-		#10;
+		t_rst = 0;
+		fread = $fopen("input_wave_binary.txt","r");
+		fwrite = $fopen("output.txt","w");
+		stim_x = 0;
+		count = 0;
+		#100
+		t_rst = 1;
+		#50
 		for (i = 0; i < inbit; i = i + 1) begin
-			stim_x = data_in_array[i];
-			#10;
+			@(posedge t_clk);
+				$fscanf(fread,"%h",stim_x);
+		end
+		$fclose(fread);
+	end
+
+	always @(posedge t_clk) begin : proc_something
+		$fwrite(fwrite, out_y,"\n");
+		count = count + 1;
+		if(count == inbit - 1)
+		begin
+			$fclose(fwrite);
+			$finish;
 		end
 	end
 
-	initial begin
-  		f = $fopen("output.txt","w");
-
-  		@(negedge t_rst); //Wait for reset to be released
-  		@(posedge t_clk);   //Wait for fisrt clock out of reset
-
-  		for (i = 0; i<inbit; i=i+1) 
-  		begin
-    		$fwrite(f,"%b\n",out_y[i]);
-  		end
-
-  		$fclose(f);  
-	end
-
-	initial begin
-		$finish;
-	end 
-
-
-
-	// initial $monitor ("a = %t, xn = %b, yn = %b", $time, stim_xn, out_yn);
-	// always @(out_yn or correct_yn)
-	// begin
-	// 	if (out_yn!=correct_yn) 
-	// 		$display("t = %t FAILED, xn = %b, out_yn = %b, correct = %b\n", $time, stim_xn, out_yn, correct_yn);
+  	// initial begin
+  	// 	stim_x = 0;
+	// 	t_clk=0; 
+	// 	t_rst=1; //Clock low at time zero
+	// 	@(posedge t_clk);
+	// 	@(posedge t_clk);
+	// 	t_rst=0;
 	// end
 
-	// initial //direct input generation
-	// begin
-	// 	t_rst = 1;
-	// 	#10 t_rst = 0;
-	// 	#10 t_rst = 1;
-	// 	stim_xn = 0; correct_yn = 0;
 
-	// 	#10 stim_xn = 16'b1111111100010111; correct_yn = 1;	// 1
-	// 	#10 stim_xn = 16'b0000001101101000; correct_yn = 1;	// 2
-	// 	#10 stim_xn = 16'b0000000010111000; correct_yn = 1;	// 3
-	// 	#10 stim_xn = 16'b0000000000010110; correct_yn = 1;	// 4
-	// 	#10 stim_xn = 16'b0000001010000011; correct_yn = 1;	// 5
-	// 	#10 stim_xn = 16'b0000001011101110; correct_yn = 1;	// 6
-	// 	#10 stim_xn = 16'b1111111110111010; correct_yn = 1;	// 7
-	// 	#10 stim_xn = 16'b0000000001000001; correct_yn = 1;	// 8
-	// 	#10 stim_xn = 16'b1111111100000010; correct_yn = 1;	// 9
-	// 	#10 stim_xn = 16'b1111110101111001; correct_yn = 1;	// 10
+	// initial begin // doc file txt 
+	// $readmemb("input_wave_binary.txt", data_in_array);
+	// end
+
+
+	// initial begin 
+	// 	#10 t_rst = 1; 
+	// end
+
+	// initial begin
+	// 	#10;
+	// 	for (i = 0; i < inbit; i = i + 1) begin
+	// 		stim_x = data_in_array[i];
+	// 		#20;
+	// 	end
+	// end
+
+	// initial begin
+  	// 	f = $fopen("output.txt","w");
+
+  	// 	for (i = 0; i<inbit; i=i+1) 
+  	// 	begin
+  	// 		@(posedge t_clk);
+	// 		// lfsr[i] <= out;
+	// 		// $display("LFSR %b", out);
+	// 		// $fwrite(f,"%b\n",   out);
+    // 		$fwrite(f,"%b\n",out_y[i]);
+  	// 	end
+
+  	// 	$fclose(f);  
+	// end
+
+	// initial begin
+	// 	$finish;
 	// end
 
 endmodule : Equalizer_8_band_tb

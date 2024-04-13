@@ -9,17 +9,17 @@ z2
 cModel Technology
 dD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/filter_tb
 T_opt
-!s110 1712956901
-VmTR`l<oQ@U^V[]z[PPm2e1
+!s110 1712980464
+VKbz2cg:a[nMZ[X7=2<GIm3
 04 19 4 work Equalizer_8_band_tb fast 0
-=1-1831bf97d605-6619a5e5-2aa-5cac
+=1-1831bf97d605-661a01ef-383-1164
 o-quiet -auto_acc_if_foreign -work work +acc
 Z0 tCvgOpt 0
 n@_opt
 OL;O;10.7c;67
 vadder
 Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z2 !s110 1712956887
+Z2 !s110 1712980446
 !i10b 1
 !s100 ^WPfREj9G1TGK[kScHMYk1
 IDi2nLmO?^:Sbc5K^7gI@L1
@@ -35,7 +35,7 @@ Z5 OL;L;10.7c;67
 r1
 !s85 0
 31
-Z6 !s108 1712956887.000000
+Z6 !s108 1712980446.000000
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/adder.sv|
 !i113 0
@@ -45,13 +45,13 @@ vEqualizer_8_band
 R1
 R2
 !i10b 1
-!s100 9A_<Z:I09lkBBcY@SzQZ42
-IQ>]aFY?ZEPn`A9D0=7D2c1
+!s100 f_M8Tb<[U3[Q4?Zaha;bC3
+IK1ShIJU^g<SCKjD^=<>8b2
 R3
 !s105 Equalizer_8_band_sv_unit
 S1
 R4
-w1712955418
+w1712976897
 8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/Equalizer_8_band.sv
 FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/Equalizer_8_band.sv
 L0 1
@@ -70,13 +70,13 @@ vEqualizer_8_band_tb
 R1
 R2
 !i10b 1
-!s100 1ePI3Ai5;h]z5MJ7M]P933
-I7[:4OIh>[mIPoRQ?2kLgX1
+!s100 [@WdLBmCB2R8Q^?_g^MhU3
+ICmPHf:L@Aa5e=kCZ1B^>Z2
 R3
 !s105 Equalizer_8_band_tb_sv_unit
 S1
 R4
-w1712956880
+w1712980419
 8D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/EQUALIZER_tb/Equalizer_8_band_tb.sv
 FD:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/EQUALIZER_tb/Equalizer_8_band_tb.sv
 L0 1
@@ -84,7 +84,7 @@ R5
 r1
 !s85 0
 31
-R6
+!s108 1712980445.000000
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/EQUALIZER_tb/Equalizer_8_band_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/testbench/EQUALIZER_tb/Equalizer_8_band_tb.sv|
 !i113 0
@@ -117,7 +117,7 @@ R7
 R0
 vgain
 R1
-Z8 !s110 1712956888
+Z8 !s110 1712980447
 !i10b 1
 !s100 ;WYnRS2GLfWLaYe;;Pb;Z1
 I<Ok`aA6<2Ak>AmNLBgofe2
@@ -133,7 +133,7 @@ R5
 r1
 !s85 0
 31
-Z9 !s108 1712956888.000000
+Z9 !s108 1712980447.000000
 !s107 D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/gain.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/TAI_LIEU/ET-E9/Program/20232/EDABK-HDL_and_Computer_Architecture/lab-exercises/Midterm-Digital_Equalization/HDL_code/gain.sv|
 !i113 0

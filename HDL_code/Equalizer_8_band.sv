@@ -178,14 +178,14 @@ module Equalizer_8_band (
 	
 
 	// initialize gain module:
-	gain gain00 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[0]), .yn(ga0));
-	gain gain01 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[1]), .yn(ga1));
-	gain gain02 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[2]), .yn(ga2));
-	gain gain03 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[3]), .yn(ga3));
-	gain gain04 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[4]), .yn(ga4));
-	gain gain05 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[5]), .yn(ga5));
-	gain gain06 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[6]), .yn(ga6));
-	gain gain07 (.clk(clk), .rst_n(rst_n), .xn(x), .g(g[7]), .yn(ga7));
+	gain gain00 (.clk(clk), .rst_n(rst_n), .xn(fg0), .g(g[0]), .yn(ga0));
+	gain gain01 (.clk(clk), .rst_n(rst_n), .xn(fg1), .g(g[1]), .yn(ga1));
+	gain gain02 (.clk(clk), .rst_n(rst_n), .xn(fg2), .g(g[2]), .yn(ga2));
+	gain gain03 (.clk(clk), .rst_n(rst_n), .xn(fg3), .g(g[3]), .yn(ga3));
+	gain gain04 (.clk(clk), .rst_n(rst_n), .xn(fg4), .g(g[4]), .yn(ga4));
+	gain gain05 (.clk(clk), .rst_n(rst_n), .xn(fg5), .g(g[5]), .yn(ga5));
+	gain gain06 (.clk(clk), .rst_n(rst_n), .xn(fg6), .g(g[6]), .yn(ga6));
+	gain gain07 (.clk(clk), .rst_n(rst_n), .xn(fg7), .g(g[7]), .yn(ga7));
 
 	
 

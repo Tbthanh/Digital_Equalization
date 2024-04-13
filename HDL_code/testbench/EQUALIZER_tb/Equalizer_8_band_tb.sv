@@ -50,15 +50,15 @@ module Equalizer_8_band_tb ();
 		#10;
 		for (i = 0; i < inbit; i = i + 1) begin
 			stim_x = data_in_array[i];
-			#10;
+			#20;
 		end
 	end
 
 	initial begin
   		f = $fopen("output.txt","w");
 
-  		@(negedge t_rst); //Wait for reset to be released
-  		@(posedge t_clk);   //Wait for fisrt clock out of reset
+  		// @(negedge t_rst); //Wait for reset to be released
+  		// @(posedge t_clk);   //Wait for fisrt clock out of reset
 
   		for (i = 0; i<inbit; i=i+1) 
   		begin
